@@ -1,6 +1,7 @@
 
 import './App.css';
 import {useState, useEffect} from "react";
+import Card from './card';
 
 
 export default function App(props){
@@ -20,10 +21,10 @@ export default function App(props){
 
     return(
         <div className="App">
-            <input className="input"type="text" value={state} onChange={handleChange} placeholder="type pincode here.."></input>
+            <input className="input"type="text" value={state} onChange={handleChange} placeholder="pincode"></input>
             <button className="button" onClick={(e)=>handleClick()}>search</button>
-            <br/><br/>
-            {element ? <Searc name={element}/> : <div></div>}
+            <br/>
+            {element ? <Searc name={element}/> : <div className="commentPlease"><br/>Please enter the pincode</div>}
         </div>
     )
   }
@@ -31,7 +32,7 @@ export default function App(props){
 
 
 
-const Searc = ({name})=>{  
+const Searc = (props)=>{  
 
   const [posts, setPosts] = useState([
     {
@@ -56,17 +57,27 @@ const Searc = ({name})=>{
   },[]);
 
 
-  var ans = "Bad bad luck, no donut for you!!";
-  if(posts.length===48){
-    ans = "Donuts available at "
+  if(posts){
     var fin = posts.filter(post => {
-        return (post.pincodes)===700007;
+        return (post.pincodes)==props.name;
     });
-    for (let i=0; i<fin.length;i++){
-      ans += fin[i].branchname + ",  "
-    } 
-    ans += "!"
   }
-  console.log("fin is", fin)
-  return <div className="branches">{ans}</div>
+  return (
+      fin.length > 0 ? 
+      <center><h3 className="yesDonut">Donuts are available</h3><ul className="list">{fin.map((item) => <Card 
+                              institutionname={item.institutionname}
+                              branchname={item.branchname}
+                              address={item.address}
+                              city={item.city}
+                              contactnumber={item.contactnumber}
+                              branchincharge={item.branchincharge}
+                              pincodes={item.pincodes}
+                              username={item.username}
+                              password={item.password}
+                              />)
+          }
+      </ul></center>
+        : 
+      <h3 className="noDonut">Bad bad luck, no donut for you!!</h3>
+      )
 }

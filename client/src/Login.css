@@ -1,0 +1,39 @@
+.login{
+    margin-top: 50px;
+    text-align: center;
+    border-color: chocolate;
+}
+
+.username{
+    background-color: rgb(234, 240, 223);
+    border: solid black;
+    border-radius: 3px;
+    width: 180px;
+    padding: 0 0 0 3px;
+}
+
+.password{
+    background-color: rgb(234, 240, 223);
+    border: solid black;
+    border-radius: 3px;
+    width: 180px;
+    padding: 0 0 0 5px;
+}
+
+.logbutton{
+    background-color: rgb(147, 165, 214);
+    border: rgb(38, 39, 43);
+    border-radius: 4px;
+    width: 60px;
+    cursor: pointer; 
+}
+
+.commentFail{
+    font-size: small;
+    color:red;
+}
+
+.commentPlease{
+    font-size: small;
+    color:blue;
+}

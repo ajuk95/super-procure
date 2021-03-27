@@ -1,23 +1,43 @@
 .App {
+  margin: 50px 0 0 0;
+  text-align: center;
   padding: 0 0 0 0;
 }
 
 .input{
-  margin: 20px 0 0 20px;
-  border-color: chocolate;
+  margin: 0 0 0 20px;
+  border:solid black;
+  background-color: rgb(234, 240, 223);
+  border-radius: 3px;
 }
 
 .button{
-  background-color: chocolate;
+  background-color: rgb(120, 122, 224);
+  border-radius: 3px;
   align-items: center;
+  cursor: pointer; 
 }
 
 .branches{
   margin: 0 0 0 20px;
 }
 
+.list{
+  display:flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
 
+.noDonut{
+  font:red;
+  color: red;
+}
 
+.yesDonut{
+  color:green
+}
 
 
 
