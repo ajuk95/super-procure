@@ -5,4 +5,5 @@
 5) Corresponding Passwords are [1, 2, ................., 48].
 6) Login using username and password.
 7) Then enter the pincode for which you want to search and find out in which all branches donuts are available. 
+8) Application deployed in AWS, Front-end: http://13.233.199.118:3000/ and Back-end: http://13.233.199.118:5000/nuts/
 
